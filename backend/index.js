@@ -3,7 +3,9 @@ const mainRouter = require("./routes/index")
 const cors = require("cors")
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:5173' // Replace this with your frontend URL
+}));
 app.use(express.json())
 
 app.use("/api/v1", mainRouter)
